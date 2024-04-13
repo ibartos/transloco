@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+dist
+coverage
+
+#ignore libraries
+node_modules
+npm_packages
+lib
+
+# IDE - VSCode
+.vscode/*

@@ -1,0 +1,467 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "stanleybet": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:application": {
+                    "strict": true
+                },
+                "@schematics/angular:component": {
+                    "standalone": true,
+                    "changeDetection": "OnPush"
+                }
+            },
+            "root": "",
+            "sourceRoot": "src",
+            "prefix": "app",
+            "i18n": {
+                "sourceLocale": "en",
+                "locales": {
+                    "ro": {
+                        "translation": "src/locale/messages.ro.xlf",
+                        "baseHref": ""
+                    }
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "ngx-build-plus:browser",
+                    "options": {
+                        "outputPath": "dist/stanleybet/browser",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "tsconfig.app.json",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/manifest.webmanifest",
+                            "src/robots.txt",
+                            "src/sitemap.xml"
+                        ],
+                        "styles": [
+                            "src/styles/main.css"
+                        ],
+                        "scripts": [],
+                        "localize": true,
+                        "aot": true,
+                        "extraWebpackConfig": "webpack.config.js",
+                        "commonChunk": false
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+
+                        },
+                        "release": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.release.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+                        },
+                        "95-stb": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.95.stb.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+
+                        },
+                        "rc-stb": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.rc.stb.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+
+                        },
+                        "stage-stb": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.stage.stb.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+
+                        },
+                        "stb-stage": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "3mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.staging-stb.ts"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            },
+                            "extraWebpackConfig": "webpack.config.js"
+                        },
+                        "development": {
+                            "localize": false,
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        },
+                        "ro": {
+                            "localize": [
+                                "ro"
+                            ]
+                        },
+                        "en": {
+                            "localize": [
+                                "en"
+                            ]
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "ngx-build-plus:dev-server",
+                    "options": {
+                        "browserTarget": "stanleybet:build",
+                        "port": 7200,
+                        "extraWebpackConfig": "webpack.config.js"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "stanleybet:build:production",
+                            "extraWebpackConfig": "webpack.prod.config.js"
+                        },
+                        "development": {
+                            "browserTarget": "stanleybet:build:development"
+                        },
+                        "ro": {
+                            "browserTarget": "stanleybet:build:development,ro"
+                        },
+                        "en": {
+                            "browserTarget": "stanleybet:build:development:en"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "stanleybet:build"
+                    }
+                },
+                "test": {
+                    "builder": "ngx-build-plus:karma",
+                    "options": {
+                        "main": "src/test.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "tsconfig.spec.json",
+                        "karmaConfig": "karma.conf.js",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "src/styles/main.css"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/stanleybet/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "release": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.release.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "95-stb": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.95.stb.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "rc-stb": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.rc.stb.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "stage-stb": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.stage.stb.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "stb-staging": {
+                            "outputHashing": "media",
+                            "localize": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.staging-stb.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": false,
+                                "hidden": true,
+                                "vendor": true
+                            }
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "stanleybet:build:development",
+                            "serverTarget": "stanleybet:server:development"
+                        },
+                        "production": {
+                            "browserTarget": "stanleybet:build:production",
+                            "serverTarget": "stanleybet:server:production"
+                        },
+                        "release": {
+                            "browserTarget": "stanleybet:build:release",
+                            "serverTarget": "stanleybet:server:release"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "routes": [
+                            "/"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "stanleybet:build:production",
+                            "serverTarget": "stanleybet:server:production"
+                        },
+                        "release": {
+                            "browserTarget": "stanleybet:build:release",
+                            "serverTarget": "stanleybet:server:release"
+                        },
+                        "development": {
+                            "browserTarget": "stanleybet:build:development",
+                            "serverTarget": "stanleybet:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                }
+            }
+        }
+    },
+    "cli": {
+        "analytics": false
+    }
+}

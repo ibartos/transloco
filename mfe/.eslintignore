@@ -1,0 +1,8 @@
+# .eslintignore
+node_modules/
+build/
+dist/
+karma.conf.js
+tailwind.config.js
+webpack.config.js
+*.spec.ts

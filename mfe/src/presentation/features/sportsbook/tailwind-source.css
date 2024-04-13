@@ -1,0 +1,37 @@
+/*@import "tailwindcss/base" layer(tailwindcss);*/
+/*@import "tailwindcss/components" layer(tailwindcss);*/
+/*@import "tailwindcss/utilities" layer(tailwindcss);*/
+
+/*@tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+    app-root {
+        display: none !important;
+    }
+
+    .cdk-overlay-backdrop {
+        display: none !important;
+    }
+
+    .cdk-overlay-container {
+        position: static !important;
+    }
+
+    .cdk-global-overlay-wrapper {
+        position: static !important;
+    }
+
+    .ckd-overlay-pane {
+        position: static !important;
+    }
+
+    .cdk-dialog-container {
+        position: static !important;
+    }
+
+    .cdk-global-scrollblock {
+        position: static !important;
+    }
+}
